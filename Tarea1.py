@@ -45,8 +45,13 @@ def main():
 
         # Pedimos al usuario que elija su jugada
         user_action = input(
-            "\nElige una opción: piedra, papel o tijeras: "
+            "\nElige una opción para jugar: piedra, papel o tijeras, o 'quit' para salir del juego: "
         ).lower()
+
+        # Comprobamos si el usuario quiere salir del juego
+        if user_action == "quit":
+            print("¡Gracias por jugar! Hasta la próxima.")
+            break
 
         # Comprobamos que la opción sea válida
         if user_action not in opciones:
