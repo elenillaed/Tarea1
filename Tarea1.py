@@ -1,3 +1,5 @@
+import random
+
 # 1. Definimos las constantes de las jugadas
 PIEDRA = "piedra"
 PAPEL = "papel"
@@ -32,7 +34,34 @@ def decidir_ganador(user_action, computer_action):
             print("Piedra rompe tijeras. ¡Perdiste!")
 
 
+# 3. Función principal del juego
 def main():
+
+    # Lista con las posibles jugadas
+    opciones = [PIEDRA, PAPEL, TIJERAS]
+
+    # Bucle para poder jugar varias rondas
+    while True:
+
+        # Pedimos al usuario que elija su jugada
+        user_action = input(
+            "\nElige una opción: piedra, papel o tijeras: "
+        ).lower()
+
+        # Comprobamos que la opción sea válida
+        if user_action not in opciones:
+            print("Opción no válida. Inténtalo de nuevo.")
+            continue
+
+        # El ordenador elige una jugada al azar
+        computer_action = random.choice(opciones)
+
+        # Mostramos las elecciones
+        print("\nElegiste", user_action,
+              ". El ordenador eligió", computer_action)
+
+        # Llamamos a la función que decide quién gana
+        decidir_ganador(user_action, computer_action)
 
 
 if __name__ == "__main__":
