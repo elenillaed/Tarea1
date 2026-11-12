@@ -1,4 +1,4 @@
-import random
+import random  # Importamos el módulo random de la librería estándar para generar elecciones aleatorias
 
 # 1. Definimos las constantes de las jugadas
 PIEDRA = "piedra"
@@ -68,6 +68,6 @@ def main():
         # Llamamos a la función que decide quién gana
         decidir_ganador(user_action, computer_action)
 
-
+# 4. Comprobamos si el archivo se ejecuta directamente y arrancamos el programa principal
 if __name__ == "__main__":
     main()
